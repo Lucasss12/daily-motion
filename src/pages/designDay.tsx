@@ -10,7 +10,6 @@ export default function DesignDay() {
 
   return (
     <div>
-      <h1>Jour {id}</h1>
       {DayComponent ? <DayComponent /> : <h2>Aucun design pour ce jour 😢</h2>}
     </div>
   )
