@@ -5,12 +5,12 @@ import ferrari from "../assets/ferrari.webp";
 export default function Day1() {
   const imgVariants = {
     initial: { left: "-50%" },
-    hover: { left: "50%", transition: { duration: 0.40, ease: "easeInOut" } },
+    hover: { left: "50%", transition: { duration: 0.45, ease: "easeInOut" } },
   };
 
   const buttonVariants = {
     initial: { color: "#FFFFFF" },
-    hover: { backgroundColor: "#FFFFFF", color: "#0c0a09", transition: { duration: 0.40, ease: "easeInOut"  } },
+    hover: { backgroundColor: "#FFFFFF", color: "#0c0a09", transition: { duration: 0.45, ease: "easeInOut"  } },
   };
 
   const textButtonVariants = {
@@ -19,25 +19,44 @@ export default function Day1() {
     },
     hover: {
       opacity: 1,
-      transition: { duration: 0.40, ease: "easeInOut"  }
+      transition: { duration: 0.45, ease: "easeInOut"  }
     },
   };
 
   const iconVariants = {
     initial: {
       x: 0,
+      transition: { duration: 0.45, ease: "easeInOut" }  
     },
     hover: {
       x: 60,
-      transition: { duration: 0.40, ease: "easeInOut"  }
+      transition: { duration: 0.45, ease: "easeInOut" }
     }
   };
+
+  const infos = [
+    {
+      icon: <Tag className="h-4 w-4"/>,
+      text: "$449.99",
+      color: "bg-white text-stone-700"
+    },
+    {
+      icon: <User className="w-4 h-4"/>,
+      text: "+18",
+      color: "bg-stone-700 text-white"
+    },
+    {
+      icon: <Box className="w-4 h-4"/>,
+      text: "3778",
+      color: "bg-stone-700 text-white"
+    }
+  ]
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
 
       <motion.div
-        className="border w-[350px] rounded-3xl bg-black flex flex-col justify-between relative overflow-hidden"
+        className="border w-[320px] rounded-3xl bg-black flex flex-col justify-between relative overflow-hidden"
         initial="initial"
         whileHover="hover"
       >
@@ -55,18 +74,12 @@ export default function Day1() {
         />
 
         <div className="flex gap-2 p-5 z-10">
-          <p className="bg-white rounded-2xl text-sm text-stone-700 px-1.5 py-1 flex items-center gap-1">
-            <Tag className="h-4 w-4"/>
-            $449.99
-          </p>
-          <p className="bg-stone-700 rounded-2xl text-sm text-white px-1.5 py-1 flex items-center gap-1">
-            <User className="w-4 h-4"/>
-              +18
-          </p>
-          <p className="bg-stone-700 rounded-2xl text-sm text-white px-1.5 py-1 flex items-center gap-1">
-            <Box className="w-4 h-4"/>
-              3778
-          </p>
+          {infos.map((info, index) => (
+            <p key={index} className={`${info.color} rounded-2xl text-sm px-1.5 py-1 flex items-center gap-1`}>
+              {info.icon}
+              {info.text}
+            </p>
+          ))}
         </div>
 
         <div className="h-[170px] z-10"></div>
