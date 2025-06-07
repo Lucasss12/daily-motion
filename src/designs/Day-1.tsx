@@ -70,7 +70,7 @@ export default function Day1() {
             WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
             maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)"
           }}
-          className="absolute z-0 top-[10%]"
+          className="absolute z-0 top-[12%]"
         />
 
         <div className="flex gap-2 p-5 z-10">
@@ -113,7 +113,7 @@ export default function Day1() {
         </div>
       </motion.div>
 
-      <p className="mt-4 bg-pink-300 text-white px-3 py-1 rounded-2xl">inspired by <span className="underline">@markoilico</span></p>
+      <p className="mt-4 bg-blue-200 text-blue-500 font-bold px-3 py-1 rounded-xl">inspired by <span className="underline">@markoilico</span></p>
     </div>
   );
 }
